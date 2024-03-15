@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAPI</title>
+</head>
+
+<body>
+    <form method="post">
+        <span>대상 선택</span>
+        <select name="type">
+            <option value="">선택</option>
+            <!-- <option value="open1">법령</option> -->
+            <option value="open2">판례</option>
+        </select>
+        <button type="submit">
+            시작
+        </button>
+    </form>
+    <% if (result) { %>
+        <table border="1">
+            <th>순번</th>
+            <th>제목</th>
+            <th>법원</th>
+            <th>사건유형</th>
+            <th>판결유형</th>
+            <th>신고일자</th>
+            <% for (let i=0; i < result.length; i++) { %>
+                <tr>
+                    <td>
+                        <%=result[i][0]%>
+                    </td>
+                    <td>
+                        <%=result[i][1]%>
+                    </td>
+                    <td>
+                        <%=result[i][2]%>
+                    </td>
+                    <td>
+                        <%=result[i][3]%>
+                    </td>
+                    <td>
+                        <%=result[i][4]%>
+                    </td>
+                    <td>
+                        <%=result[i][5]%>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+        <% } %>
+    <!-- <% if (result) { %>
+        <table border="1">
+            <th>순번</th>
+            <th>법령명</th>
+            <th>소관부처</th>
+            <th>제개정구분</th>
+            <th>법령종류</th>
+            <th>공포번호</th>
+            <th>공포일자</th>
+            <th>시행일</th>
+            <% for (let i=0; i < result.length; i++) { %>
+                <tr>
+                    <td>
+                        <%=result[i][0]%>
+                    </td>
+                    <td>
+                        <%=result[i][1]%>
+                    </td>
+                    <td>
+                        <%=result[i][2]%>
+                    </td>
+                    <td>
+                        <%=result[i][3]%>
+                    </td>
+                    <td>
+                        <%=result[i][4]%>
+                    </td>
+                    <td>
+                        <%=result[i][5]%>
+                    </td>
+                    <td>
+                        <%=result[i][6]%>
+                    </td>
+                    <td>
+                        <%=result[i][7]%>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+        <% } %> -->
+</body>
+
+</html>
